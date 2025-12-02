@@ -1,6 +1,6 @@
 # rust-book
 
-This repository contains my notes and exercises from reading "The Rust Programming Language" book, commonly referred to as "The Rust Book". Moreover, it includes rustlings exercises to help reinforce my understanding of Rust concepts.
+This repository contains my notes and exercises from reading ["The Rust Programming Language"](https://rust-book.cs.brown.edu) book, commonly referred to as "The Rust Book". Moreover, it includes [rustlings](https://rustlings.rust-lang.org/) exercises to help reinforce my understanding of Rust concepts.
 
 ## Reproducing this Repository
 
