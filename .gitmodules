@@ -1,6 +1,6 @@
 [submodule "rustlings"]
 	path = rustlings
-	url = https://github.com/rust-lang/rustlings.git
+	url = ./rustlings
 	branch = master
 [submodule "get-dependencies"]
 	path = get-dependencies
