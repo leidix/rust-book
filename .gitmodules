@@ -1,8 +1,0 @@
-[submodule "rustlings"]
-	path = rustlings
-	url = git@github.com:leidix/rustlings.git
-	branch = master
-[submodule "get-dependencies"]
-	path = get-dependencies
-	url = git@github.com:leidix/get-dependencies.git
-	branch = main
