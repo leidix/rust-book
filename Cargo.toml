@@ -1,16 +1,18 @@
-[package]
-name = "rust-book"
-version = "0.1.0"
-edition = "2024"
-
 [workspace]
 members = [
     "src/projects/hello_cargo",
     "src/projects/hellow_world",
     "rustlings",
 ]
+default-members = [
+    "src/projects/hello_cargo",
+    "src/projects/hellow_world",
+]
 resolver = "2"
 
-[dependencies]
-rand = "0.8.5"
-trpl = "0.2.0"
+[profile.release]
+panic = "abort"
+
+[profile.dev]
+panic = "abort"
+
