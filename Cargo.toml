@@ -4,7 +4,7 @@ members = [
 ]
 default-members = [
     "src/projects/hello_cargo",
-    "src/projects/hellow_world",
+    "src/projects/hello_world",
 ]
 resolver = "2"
 
@@ -13,4 +13,3 @@ panic = "abort"
 
 [profile.dev]
 panic = "abort"
-
