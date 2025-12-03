@@ -35,6 +35,6 @@ RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master
 RUN curl -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path
 ENV PATH="/home/vscode/.cargo/bin:${PATH}"
 
-WORKDIR /workspace
+WORKDIR /home/vscode/workspace
 
 CMD ["/bin/zsh"]
