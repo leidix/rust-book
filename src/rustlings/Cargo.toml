@@ -42,12 +42,6 @@ rustix = { version = "1.0", default-features = false, features = ["std", "stdio"
 [dev-dependencies]
 tempfile = "3.21"
 
-[profile.release]
-panic = "abort"
-
-[profile.dev]
-panic = "abort"
-
 [package.metadata.release]
 pre-release-hook = ["./release-hook.sh"]
 pre-release-commit-message = "Release 🎉"
