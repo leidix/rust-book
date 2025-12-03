@@ -2,6 +2,7 @@ use anyhow::{Context, Result, bail};
 use app_state::StateFileStatus;
 use clap::{Parser, Subcommand};
 use std::{
+    env,
     io::{self, IsTerminal, Write},
     path::Path,
     process::ExitCode,
@@ -64,6 +65,13 @@ enum Subcommands {
 }
 
 fn main() -> Result<ExitCode> {
+    if let Ok(path) = env::var("EXERCISES_PATH") {
+        let exercises_path = Path::new(&path);
+        if let Some(parent) = exercises_path.parent() {
+            env::set_current_dir(parent)?;
+        }
+    }
+
     let args = Args::parse();
 
     if cfg!(not(debug_assertions)) && Path::new("dev/rustlings-repo.txt").exists() {
