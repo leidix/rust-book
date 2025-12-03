@@ -9,6 +9,7 @@ exclude = [
 ]
 default-members = [
     "src/projects/*",
+    "src/rustlings",
 ]
 resolver = "2"
 
