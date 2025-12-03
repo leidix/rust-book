@@ -3,11 +3,15 @@ name = "rust-book"
 version = "0.1.0"
 edition = "2024"
 
+[workspace]
+members = [
+    "src/projects/hello_cargo",
+    "src/projects/hellow_world",
+    "rustlings",
+]
+resolver = "2"
+
 [dependencies]
 rand = "0.8.5"
 rustlings = "6.5.0"
 trpl = "0.2.0"
-
-[[bin]]
-name = "hello_world"
-path = "src/projects/hello_world/main.rs"
