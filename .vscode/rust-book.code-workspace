@@ -3,6 +3,55 @@
 		{
 			"path": ".."
 		}
-    ],
-    "settings": {}
+	],
+	"extensions": {
+		"recommendations": [
+			"rust-lang.rust-analyzer",
+			"vadimcn.vscode-lldb",
+			"serayuzgur.crates"
+		]
+	},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"type": "lldb",
+				"request": "launch",
+				"name": "Debug executable",
+				"cargo": {
+					"args": [
+						"build",
+						"--bin=${fileBasenameNoExtension}",
+						"--package=${fileBasenameNoExtension}"
+					],
+					"filter": {
+						"name": "${fileBasenameNoExtension}",
+						"kind": "bin"
+					}
+				},
+				"args": [],
+				"cwd": "${workspaceFolder}"
+			},
+			{
+				"type": "lldb",
+				"request": "launch",
+				"name": "Debug unit tests in executable",
+				"cargo": {
+					"args": [
+						"test",
+						"--no-run",
+						"--bin=${fileBasenameNoExtension}",
+						"--package=${fileBasenameNoExtension}"
+					],
+					"filter": {
+						"name": "${fileBasenameNoExtension}",
+						"kind": "bin"
+					}
+				},
+				"args": [],
+				"cwd": "${workspaceFolder}"
+			}
+		]
+	},
+	"settings": {}
 }
