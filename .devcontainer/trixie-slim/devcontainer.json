@@ -6,8 +6,15 @@
 	"service": "debian-trixie-slim",
 	"shutdownAction": "stopCompose",
 
+    // Properly pass local workspace folder and SSH_AUTH_SOCK to the container
+    // for ssh-agent forwarding to work, make sure to have the SSH_AUTH_SOCK
+    // environment variable set in your local environment before starting
+    // the container, e.g. by adding the following line to your shell profile:
+    // eval $(keychain --eval --agents ssh id_ed25519)
+	"initializeCommand": "echo \"LOCAL_WORKSPACE_FOLDER=${localWorkspaceFolder}\" > .devcontainer/.env && echo \"SSH_AUTH_SOCK=${localEnv:SSH_AUTH_SOCK:-/tmp/no-agent}\" >> .devcontainer/.env",
+
 	// Note: postCreateCommand will not work when using a vscode workspace file
-	"workspaceFolder": "/home/${localEnv:USER}/workspace/rust-book/.vscode/rust-book.code-workspace",
+	"workspaceFolder": "${localWorkspaceFolder}/.vscode/rust-book.code-workspace",
 
 	"remoteUser": "${localEnv:USER}",
 

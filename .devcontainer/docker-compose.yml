@@ -6,8 +6,10 @@ services:
       args:
         BASE_IMAGE: "debian"
         BASE_TAG: "trixie-slim"
+    env_file:
+      - .env
     volumes:
-      - ..:/home/${USER}/workspace/rust-book
-    working_dir: /home/${USER}/workspace/rust-book
+      - ${LOCAL_WORKSPACE_FOLDER}:${LOCAL_WORKSPACE_FOLDER}
+      - ${SSH_AUTH_SOCK}:/tmp/ssh-agent.sock
     restart: unless-stopped
     tty: true
