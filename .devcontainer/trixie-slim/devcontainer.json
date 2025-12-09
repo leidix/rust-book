@@ -1,6 +1,6 @@
 {
 
-	"name": "compose::rust-book-devcontainer::debian-trixie-slim",
+	"name": "compose::rust-learning-devcontainer::debian-trixie-slim",
 
 	"dockerComposeFile": "../docker-compose.yml",
 	"service": "debian-trixie-slim",
@@ -14,7 +14,7 @@
 	"initializeCommand": "echo \"LOCAL_WORKSPACE_FOLDER=${localWorkspaceFolder}\" > .devcontainer/.env && echo \"SSH_AUTH_SOCK=${localEnv:SSH_AUTH_SOCK:-/tmp/no-agent}\" >> .devcontainer/.env",
 
 	// Note: postCreateCommand will not work when using a vscode workspace file
-	"workspaceFolder": "${localWorkspaceFolder}/.vscode/rust-book.code-workspace",
+	"workspaceFolder": "${localWorkspaceFolder}/.vscode/rust-learning.code-workspace",
 
 	"remoteUser": "${localEnv:USER}",
 
