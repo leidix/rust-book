@@ -37,15 +37,17 @@ To get started with this project, you'll need to have [Rust](https://www.rust-la
 This repository also includes the `rustlings` exercises. You can work on them directly from this workspace without needing to install `rustlings` separately.
 
 To start the exercises, run the following convenient command from the root of your project:
+
 ```bash
 cargo rustlings
 ```
-This command is a Cargo alias defined in `.cargo/config.toml` that will build and run the `rustlings` program.
+
+This command is a Cargo alias defined in `.cargo/config.toml` that will build and run the `rustlings` program in `watch` mode, providing an interactive experience.
 
 Your progress on the exercises will be saved in the `src/rustlings/exercises` directory. By committing these changes to your repository, you ensure that anyone who clones it will have your exact progress.
 
 ## Directory Structure
 
-*   `src/projects`: Contains your personal Rust projects.
-*   `src/rustlings`: Contains the complete `rustlings` project, including the exercises and the runner program.
-*   `Cargo.toml`: The top-level manifest file that defines the Cargo workspace.
+* `src/projects`: Contains your personal Rust projects.
+* `src/rustlings`: Contains the complete `rustlings` project, including the exercises and the runner program.
+* `Cargo.toml`: The top-level manifest file that defines the Cargo workspace.
