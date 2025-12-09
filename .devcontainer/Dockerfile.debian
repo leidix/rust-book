@@ -20,6 +20,7 @@ RUN apt-get update \
         ca-certificates \
         build-essential \
         make \
+        just \
         pkg-config \
         libssl-dev \
         gcc \
@@ -29,20 +30,17 @@ RUN apt-get update \
 
 
 # ---- Builder Stage ----
-# Used to build/install tools like 'just' and 'rustup'.
+# Used to build/install tools like 'just'
 FROM base AS builder
 
-# Install 'just' and its zsh completions
-RUN curl --proto '=https' --tlsv1.2 -sSf https://just.systems/install.sh | bash -s -- --to /usr/local/bin \
-    && mkdir -p /usr/local/share/zsh/site-functions \
+# Install 'just' zsh completions
+RUN mkdir -p /usr/local/share/zsh/site-functions \
     && just --completions zsh > /usr/local/share/zsh/site-functions/_just
-
 
 
 # ---- Final Stage ----
 # Assemble the final image by copying artifacts from the builder.
 FROM base AS final
 
-# Copy 'just' binary and completions from builder stage
-COPY --from=builder /usr/local/bin/just /usr/local/bin/just
+# Copy 'just' completions from builder stage
 COPY --from=builder /usr/local/share/zsh/site-functions/_just /usr/local/share/zsh/site-functions/_just
